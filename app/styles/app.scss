@@ -1,0 +1,279 @@
+@import "meyer-reset";
+
+// Height variables
+$height-header: 60px !default;
+$height-avatar: 100px !default;
+
+// Color variables
+$color-pink: #eb298c !default;
+$color-white: #fff !default;
+$color-dark-grey: #666 !default;
+$color-light-grey: #999 !default;
+$color-very-light-grey: #eee !default;
+$color-blue: #53B0EB !default;
+$color-green: #00AB6C !default;
+$color-orange: #ED5B33 !default;
+$color-primary: $color-pink !default;
+
+// Font variables
+$font-size-small: 0.813rem !default;
+
+
+@mixin flex($justify-content) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justify-content;
+}
+
+// global styles
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px/1.6 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $color-dark-grey;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($color-primary, 10%);
+  }
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 1.25rem 0;
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: 300;
+}
+
+p {
+  margin: 0.75em 0;
+}
+
+// Colors
+.color {
+  &--blue {
+    color: $color-blue;
+  }
+  &--green {
+    color: $color-green;
+  }
+  &--orange {
+    color: $color-orange;
+  }
+}
+
+// Header
+.header {
+
+  height: $height-header;
+  background-color: $color-primary;
+  padding: 10px 20px;
+  line-height: $height-header - 20px;
+  color: $color-white;
+  margin-bottom: $height-header + 20px;
+  @include flex(space-between);
+
+  a {
+    color: $color-white;
+  }
+
+  &__title {
+
+    font-size: 1.8rem;
+    letter-spacing: -1px;
+    font-family: 'Caveat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  }
+
+  &__avatar {
+
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -$height-avatar / 2;
+    width: $height-avatar;
+    height: $height-avatar;
+    border-radius: 50%;
+    border: 5px solid $color-white;
+
+  }
+
+  &__nav {
+
+    font-size: $font-size-small;
+
+    &__list {
+
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      &__item {
+
+        display: inline-block;
+
+        a {
+          display: block;
+          margin: 0 5px;
+          padding: 0 5px;
+          border-radius: 3px;
+
+          &:hover {
+            color: $color-primary;
+            background-color: $color-white;
+          }
+
+        }
+
+      }
+    }
+  }
+
+}
+
+// Intro
+.intro {
+  @include flex(center);
+  text-align: center;
+
+  &__title {
+    color: $color-light-grey;
+    font-weight: 300;
+    font-size: 1.250rem;
+  }
+}
+
+// Content
+.content {
+  @include flex(center);
+
+  &__wrapper {
+    flex: 0 1 auto;
+    margin: 30px;
+    padding: 20px;
+    width: 600px;
+    border-top: 1px solid $color-very-light-grey;
+    border-bottom: 1px solid $color-very-light-grey;
+  }
+
+}
+
+// Info pane
+.info-pane {
+  padding-left: 100px;
+  margin: 50px 0;
+  background-position: 0px 10px;
+  background-repeat: no-repeat;
+
+  &--drupal {
+    background-image: url('../images/drupal8.svg');
+    background-size: 85px 85px;
+    background-position: -10px 10px;
+  }
+
+  &--javascript {
+    background-image: url('../images/javascript.svg');
+    background-size: 60px 60px;
+  }
+
+  &--medium {
+    background-image: url('../images/medium.svg');
+    background-size: 60px 60px;
+    background-position: 0px 0px;
+  }
+
+  &:first-of-type {
+    margin-top: 30px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 30px;
+  }
+}
+
+// Footer
+.footer {
+  @include flex(center);
+  text-align: center;
+  color: $color-light-grey;
+  font-size: $font-size-small;
+  margin-bottom: 1rem;
+}
+
+// CV
+
+.cv {
+
+  &__resume {
+
+    &__item {
+
+      margin: 0 0 30px 0;
+
+    }
+
+  }
+
+}
+
+@media only screen
+  and (max-width: 480px) {
+
+    .header {
+
+      padding: 10px;
+      margin-bottom: 50px;
+
+      &__avatar {
+
+        top: $height-avatar / 3;
+        margin-left: -(($height-avatar * 2/3) / 2);
+        width: $height-avatar * 2/3;
+        height: $height-avatar * 2/3;
+
+      }
+
+      &__nav__list__item a {
+
+        margin: 0 2px;
+        padding: 0 2px;
+
+      }
+
+    }
+
+    .intro {
+
+      &__title {
+
+        font-size: 1.125rem;
+
+      }
+
+    }
+
+    .info-pane {
+      margin: 30px 0;
+
+      &:first-of-type {
+        margin-top: 10px;
+      }
+
+      &:last-of-type {
+        margin-bottom: 10px;
+      }
+    }
+
+}
