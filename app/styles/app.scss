@@ -49,7 +49,7 @@ a {
 h3 {
   font-size: 1.25rem;
   font-weight: 400;
-  margin: 1.25rem 0;
+  margin: 1rem 0;
 }
 
 h4 {
@@ -59,6 +59,19 @@ h4 {
 
 p {
   margin: 0.75em 0;
+}
+
+.root {
+  &-enter {
+    opacity: 0;
+
+    &-active {
+      opacity: 1;
+      transition: opacity 0.5s ease-in;
+    }
+
+  }
+
 }
 
 // Colors
@@ -72,6 +85,16 @@ p {
   &--orange {
     color: $color-orange;
   }
+}
+
+// Application loading
+.application--loading {
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: 'Loading';
+
 }
 
 // Header
@@ -131,6 +154,11 @@ p {
           border-radius: 3px;
 
           &:hover {
+            color: $color-primary;
+            background-color: $color-white;
+          }
+
+          &.active {
             color: $color-primary;
             background-color: $color-white;
           }
@@ -231,9 +259,21 @@ p {
 @media only screen
   and (max-width: 480px) {
 
+    body {
+      font: 13px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+    }
+
+    h4 {
+      font-size: 1rem;
+    }
+
     .header {
 
-      padding: 10px;
+      padding: 10px 5px;
       margin-bottom: 50px;
 
       &__avatar {
@@ -247,8 +287,18 @@ p {
 
       &__nav__list__item a {
 
-        margin: 0 2px;
-        padding: 0 2px;
+        margin: 0;
+        padding: 0 3px;
+
+      }
+
+    }
+
+    .content {
+
+      &__wrapper {
+
+        padding: 0;
 
       }
 
@@ -258,13 +308,15 @@ p {
 
       &__title {
 
-        font-size: 1.125rem;
+        font-size: 1rem;
 
       }
 
     }
 
     .info-pane {
+
+      padding-left: 80px;
       margin: 30px 0;
 
       &:first-of-type {

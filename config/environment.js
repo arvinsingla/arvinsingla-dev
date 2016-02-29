@@ -26,8 +26,11 @@ module.exports = function(environment) {
     // Set or update content security policies
     contentSecurityPolicy: {
       'font-src': "'self' fonts.gstatic.com",
-      'style-src': "'self' fonts.googleapis.com"
-    }
+      'style-src': "'self' fonts.googleapis.com",
+      'script-src': "'self' 'unsafe-eval' https://www.google-analytics.com",
+      'img-src': "'self' https://www.google-analytics.com"
+    },
+    contentSecurityPolicyHeader: 'Content-Security-Policy'
   };
 
   if (environment === 'development') {
