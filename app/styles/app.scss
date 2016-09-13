@@ -186,6 +186,10 @@ p {
 .content {
   @include flex(center);
 
+  img {
+    width: 100%;
+  }
+
   &__wrapper {
     flex: 0 1 auto;
     margin: 30px;
@@ -237,6 +241,17 @@ p {
   color: $color-light-grey;
   font-size: $font-size-small;
   margin-bottom: 1rem;
+}
+
+// Blog
+
+.blog__item {
+  &__title {
+    margin-bottom: 0;
+  }
+  &__date {
+    color: $color-light-grey;
+  }
 }
 
 // CV

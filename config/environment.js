@@ -23,12 +23,16 @@ module.exports = function(environment) {
       'Caveat:700:latin'
     ],
 
+    // Medium blog feed.
+    medium: 'http://rss2json.com/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Farvin-singla',
+
     // Set or update content security policies
     contentSecurityPolicy: {
       'font-src': "'self' fonts.gstatic.com",
       'style-src': "'self' fonts.googleapis.com",
       'script-src': "'self' 'unsafe-eval' https://www.google-analytics.com",
-      'img-src': "'self' https://www.google-analytics.com"
+      'img-src': "'self' *",
+      'connect-src': "'self http://rss2json.com"
     },
     contentSecurityPolicyHeader: 'Content-Security-Policy'
   };

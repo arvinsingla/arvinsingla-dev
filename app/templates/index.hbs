@@ -2,7 +2,7 @@
 
   <h3>Drupal is my jam</h3>
 
-  <p>Ten years of experience, <a href="https://ca.linkedin.com/in/arvinsingla
+  <p>Over {{content.drupalYear}} years of experience, <a href="https://ca.linkedin.com/in/arvinsingla
 " target="_BLANK">dozens of projects</a>, a handful of <a href="http://www.drupal.org/u/arvinsingla" target="_BLANK">open source modules</a>, and a few great presentations. I ♥ Drupal</p>
 
 </div>
@@ -11,7 +11,7 @@
 
   <h3>Full time Javascript</h3>
 
-  <p>I've spent the last 2 years building web applications with all the major frameworks including AngularJS, Ember.js, and Node.js</p>
+  <p>I've spent the last {{content.javascriptYear}} years building scalable web applications with all the major frameworks including AngularJS, Ember.js, and Node.js</p>
 
 </div>
 
@@ -19,8 +19,11 @@
 
   <h3>Latest Medium post</h3>
 
-  <p><a href="https://medium.com/@arvinsingla/apple-homekit-hacking-3d2902e7a1df" target="_BLANK">Apple HomeKit hacking</a>: DIY inside the walled garden</p>
-
-  <p>I had a simple goal: turn the lights on and off in my house using my voice and finally live in the future Star Trek had promised me so many years ago.</p>
+  {{#if content.medium}}
+    <p><a href="{{content.medium.link}}" target="_BLANK">{{content.medium.title}}</a></p>
+    {{{content.medium.description}}}
+  {{else}}
+    Unable to fetch posts from Medium. Visit my <a href="https://medium.com/arvin-singla" target="_BLANK">medium publication</a> to view my latest articles.
+  {{/if}}
 
 </div>

@@ -1,14 +1,22 @@
 import Ember from 'ember';
+import Config from 'arvinsingla/config/environment';
 
 export default Ember.Route.extend({
 
   model() {
 
-    var date = new Date();
+    let date = new Date();
+    let medium = $.getJSON(Config.medium).then((data) => {
+      if (data.status === 'ok') {
+        return data.items;
+      }
+      return []
+    });
 
-    return {
-      year: date.getFullYear()
-    };
+    return Ember.RSVP.hash({
+      year: date.getFullYear(),
+      medium
+    });
 
   }
 
