@@ -12,20 +12,40 @@
 
       <ul class="header__nav__list">
 
-        <li class="header__nav__list__item">
-          {{link-to "CV" "cv"}}
+        <li class="header__nav__list__item print-hide">
+          {{link-to "cv" "cv"}}
         </li>
 
-        <li class="header__nav__list__item">
+        <li class="header__nav__list__item print-hide">
           {{link-to "blog" "blog"}}
         </li>
 
-        <li class="header__nav__list__item">
+        <li class="header__nav__list__item print-hide">
           <a href="http://www.github.com/arvinsingla" title="View my github profile" target="_BLANK">github</a>
         </li>
 
-        <li class="header__nav__list__item">
+{{!--         <li class="header__nav__list__item print-hide">
           <a href="http://www.twitter.com/arvinsingla" title="Read my thougths on twitter" target="_BLANK">twitter</a>
+        </li> --}}
+
+        <li class="header__nav__list__item print-show">
+          Toronto
+        </li>
+
+        <li class="header__nav__list__item print-show">
+          &middot;
+        </li>
+
+        <li class="header__nav__list__item print-show">
+          <a href="tel:1-647-864-6564">647-864-6564</a>
+        </li>
+
+        <li class="header__nav__list__item print-show">
+          &middot;
+        </li>
+
+        <li class="header__nav__list__item print-show">
+          <a href="mailto:me@arvinsingla.com">me@arvinsingla.com</a>
         </li>
 
       </ul>
@@ -37,8 +57,8 @@
   <section class="intro">
 
     <h2 class="intro__title">
-      A Toronto based Software Engineer<br/>
-      crafting things in <span class="color--blue">Drupal</span> and <span class="color--green">Javascript</span>
+      A Toronto based Software Developer<br/>
+      crafting applications in <span class="color--green">Javascript</span> and <span class="color--blue">Drupal</span>
     </h2>
 
   </section>
@@ -55,7 +75,8 @@
 
   <footer class="footer">
 
-    <span>&copy; {{content.year}} Arvin Singla</span>
+    <span class="print-hide">&copy; {{content.year}} Arvin Singla</span>
+    <span class="print-show">Toronto &middot; <a href="tel:1-647-864-6564">647-864-6564</a> &middot; <a href="mailto:me@arvinsingla.com">me@arvinsingla.com</a></span>
 
   </footer>
 
