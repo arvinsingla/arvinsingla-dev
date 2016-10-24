@@ -1,10 +1,1 @@
-{{#if content.medium.length}}
-  {{#each content.medium as |post|}}
-    <div class="blog__item">
-      <h3 class="blog__item__title"><a href="{{post.link}}" target="_BLANK">{{post.title}}</a></h3>
-      <div class="blog__item__date">{{post.pubDate}}</div>
-    </div>
-  {{/each}}
-{{else}}
-  Unable to fetch posts from Medium. Visit my <a href="https://medium.com/arvin-singla" target="_BLANK">medium publication</a> to view my latest articles.
-{{/if}}
+{{medium-articles}}

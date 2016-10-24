@@ -24,7 +24,7 @@ module.exports = function(environment) {
     ],
 
     // Medium blog feed.
-    medium: 'http://rss2json.com/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Farvin-singla',
+    medium: 'https://rss2json.com/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Farvin-singla',
 
     // Set or update content security policies
     contentSecurityPolicy: {

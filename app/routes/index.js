@@ -2,17 +2,17 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
+  medium: Ember.inject.service(),
+
   model() {
     let date = new Date(),
         currentYear = date.getFullYear(),
         drupalYear = currentYear - 2006,
-        javascriptYear = currentYear - 2013,
-        applicationModel = this.modelFor('application');
+        javascriptYear = currentYear - 2013;
 
     return {
       drupalYear,
-      javascriptYear,
-      medium: applicationModel.medium[0] || []
+      javascriptYear
     };
   }
 });

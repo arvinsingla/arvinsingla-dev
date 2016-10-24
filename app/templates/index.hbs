@@ -19,11 +19,6 @@
 
   <h3>Latest Medium post</h3>
 
-  {{#if content.medium}}
-    <p><a href="{{content.medium.link}}" target="_BLANK">{{content.medium.title}}</a></p>
-    {{{content.medium.description}}}
-  {{else}}
-    Unable to fetch posts from Medium. Visit my <a href="https://medium.com/arvin-singla" target="_BLANK">medium publication</a> to view my latest articles.
-  {{/if}}
+  {{medium-articles showFirst=true}}
 
 </div>

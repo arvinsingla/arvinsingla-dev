@@ -20,7 +20,7 @@ module.exports = function(deployTarget) {
     ENV.build.environment = 'production';
     // configure other plugins for production deploy target here
     ENV.cp = {
-      destDir: '/Users/arvin.singla/Sites/personal/arvinsingla-prod/'
+      destDir: '/Users/arvin.singla/Sites/personal/arvinsingla.github.io/'
     };
   }
 
