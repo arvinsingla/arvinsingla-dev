@@ -24,7 +24,7 @@ module.exports = function(environment) {
     ],
 
     // Medium blog feed.
-    medium: 'https://rss2json.com/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Farvin-singla',
+    medium: 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Farvin-singla%3Ftruncated%3Dtrue&api_key=0tjef0mdha7ryfkqk9hoovmgwz7oweknjaoksobz',
 
     // Set or update content security policies
     contentSecurityPolicy: {
@@ -32,7 +32,7 @@ module.exports = function(environment) {
       'style-src': "'self' fonts.googleapis.com",
       'script-src': "'self' 'unsafe-eval' https://www.google-analytics.com",
       'img-src': "'self' *",
-      'connect-src': "'self http://rss2json.com"
+      'connect-src': "'self https://api.rss2json.com"
     },
     contentSecurityPolicyHeader: 'Content-Security-Policy'
   };

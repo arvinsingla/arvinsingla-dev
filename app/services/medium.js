@@ -10,7 +10,6 @@ export default Ember.Service.extend({
     this.set('articles', []);
     Ember.$.getJSON(Config.medium).then((data) => {
       if (data.status === 'ok') {
-        debugger;
         this.set('articles', data.items);
       }
     });
